@@ -1,0 +1,69 @@
+
+users
+  email:string,   null: false
+  name:string,    null: false
+
+  p_number:string
+
+  cards
+    //CC (name, number, CVV, expiration date )
+    userid:integer,          null:false
+    default:boolenan
+    last_four:integer,       null:false
+    nickname:string
+    merchant_id:string,      null:false
+    merchant_card_id:string, null:false
+
+  addresses
+    userid:integer     null: false
+    shipping:boolean
+    billing:boolean
+    name:string
+    company:string
+    address:string     null: false
+    address_2:string
+    city:string        null: false
+    stateid:integer    null: false
+    zip:string         null: false
+
+  cart
+    userid:integer      null:false
+    productid:integer   null:false
+    quantity:integer    null:false
+
+orders
+  userid:integer
+  transaction_id:string
+
+order_items
+  orderid:integer       null:false
+  title:string          null:false
+  price:float           null:false
+  quantity:integer      null:false
+  discount:float
+  tax:float             null:false
+
+shipments
+  orderid:integer
+  status:string
+  date:date
+
+
+shipment_items
+  shipmentid:integer    null:false
+  itemid:integer        null:false
+
+
+products
+  title:string          null:false
+  description:text      null:false
+  price:float           null:false
+  SKU:string            null:false
+  categoryid:intiger
+
+categories
+  description:text      null:false
+
+states
+  abbr:string           null:false
+  full:string           null:false
