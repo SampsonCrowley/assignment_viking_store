@@ -32,8 +32,8 @@ users
     quantity:integer    null:false
 
 orders
-  userid:integer
-  transaction_id:string
+  userid:integer    null:false
+  transaction_id:integer    null:false
 
 order_items
   orderid:integer       null:false

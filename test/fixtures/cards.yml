@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userid: 1
+  default: false
+  last_four: 1
+  nickname: MyString
+  merchant_id: MyString
+  merchant_card_id: MyString
+
+two:
+  userid: 1
+  default: false
+  last_four: 1
+  nickname: MyString
+  merchant_id: MyString
+  merchant_card_id: MyString

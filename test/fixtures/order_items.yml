@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderid: 1
+  title: MyString
+  price: 1.5
+  quantity: 1
+  discount: 1.5
+  tax: 1.5
+
+two:
+  orderid: 1
+  title: MyString
+  price: 1.5
+  quantity: 1
+  discount: 1.5
+  tax: 1.5
