@@ -1,9 +1,14 @@
 users
   email, name,
-  phone number, address(shipping, billing), CC (name, number, CVV, expiration date )
+  phone number
+
+CC
+  //CC (name, number, CVV, expiration date )
+  userid, default*, last 4 digits, nickname, card reference, merchant
 
 addresses
-  required(name*, company*, street line1, optional line2, city, state, zip)
+  userid, shipping, billing, required(name*, company*,
+  address 1, address 2*, city, state, zip)
 
 products
     title, description, price, SKU #, category field
