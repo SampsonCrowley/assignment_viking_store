@@ -1,17 +1,52 @@
+
 users
-  email, name,
-  phone number
+  email:string,   null: false
+  name:string,    null: false
 
-CC
-  //CC (name, number, CVV, expiration date )
-  userid, default*, last 4 digits, nickname, card reference, merchant
+  p_number:string
 
-addresses
-  userid, shipping, billing, required(name*, company*,
-  address 1, address 2*, city, state, zip)
+  cards
+    //CC (name, number, CVV, expiration date )
+    userid:integer,          null:false
+    default:boolenan
+    last_four:integer,       null:false
+    nickname:string
+    merchant_id:string,      null:false
+    merchant_card_id:string, null:false
+
+  addresses
+    userid:integer     null: false
+    shipping:boolean
+    billing:boolean
+    name:string
+    company:string
+    address:string     null: false
+    address_2:string
+    city:string        null: false
+    stateid:integer    null: false
+    zip:string         null: false
+
+  cart
+    userid:integer      null:false
+    productid:integer   null:false
+    quantity:integer    null:false
+
+orders
+  userid:integer
+  transaction_id:string
+
+order_items
+  orderid, title, price, SKU, shipping, billing, quantity, discount, tax
+
+shipments
+  orderid, itemid, projected, shipped, delivered
 
 products
     title, description, price, SKU #, category field
 
 categories
   id, description
+
+states
+  abbr:string   null:false
+  full:string   null:false
