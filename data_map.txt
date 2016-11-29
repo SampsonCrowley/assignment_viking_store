@@ -1,0 +1,12 @@
+users
+  email, name,
+  phone number, address(shipping, billing), CC (name, number, CVV, expiration date )
+
+addresses
+  required(name*, company*, street line1, optional line2, city, state, zip)
+
+products
+    title, description, price, SKU #, category field
+
+categories
+  id, description
