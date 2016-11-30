@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129234825) do
+ActiveRecord::Schema.define(version: 20161130000447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20161129234825) do
     t.string   "merchant_card_id", null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["merchant_card_id"], name: "index_cards_on_merchant_card_id", unique: true, using: :btree
   end
 
   create_table "carts", force: :cascade do |t|
@@ -53,6 +54,8 @@ ActiveRecord::Schema.define(version: 20161129234825) do
     t.text     "description", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "tag",         null: false
+    t.index ["description"], name: "index_categories_on_description", unique: true, using: :btree
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -71,6 +74,7 @@ ActiveRecord::Schema.define(version: 20161129234825) do
     t.integer  "transaction_id", null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["transaction_id"], name: "index_orders_on_transaction_id", unique: true, using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -81,6 +85,8 @@ ActiveRecord::Schema.define(version: 20161129234825) do
     t.integer  "categoryid"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["sku"], name: "index_products_on_sku", unique: true, using: :btree
+    t.index ["title"], name: "index_products_on_title", unique: true, using: :btree
   end
 
   create_table "shipment_items", force: :cascade do |t|
@@ -103,6 +109,8 @@ ActiveRecord::Schema.define(version: 20161129234825) do
     t.string   "full",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["abbr"], name: "index_states_on_abbr", unique: true, using: :btree
+    t.index ["full"], name: "index_states_on_full", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -111,6 +119,7 @@ ActiveRecord::Schema.define(version: 20161129234825) do
     t.string   "p_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
 end
