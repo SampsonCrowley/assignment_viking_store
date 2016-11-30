@@ -20,7 +20,7 @@ User.find_each do |u|
                 last_four: rand(1000..9999),
                 nickname: [nil, 'biz', 'house'].sample,
                 merchant_id: Array.new(9){[*"A".."Z", *"0".."9"].sample}.join,
-                merchant_card_id: (Array.new(9){[*"A".."Z", *"0".."9"].sample} << n).join
+                merchant_card_id: Array.new(9){[*"A".."Z", *"0".."9"].sample}.join
     )
   end
 end
