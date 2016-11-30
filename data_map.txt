@@ -8,7 +8,7 @@ users
   cards
     //CC (name, number, CVV, expiration date )
     userid:integer,          null:false
-    default:boolenan
+    default:boolean
     last_four:integer,       null:false
     nickname:string
     merchant_id:string,      null:false
@@ -32,8 +32,8 @@ users
     quantity:integer    null:false
 
 orders
-  userid:integer    null:false
-  transaction_id:integer    null:false
+  userid:integer
+  transaction_id:string
 
 order_items
   orderid:integer       null:false
